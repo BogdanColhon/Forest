@@ -1,0 +1,75 @@
+   html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+#info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    font-family: monospace;
+    background: rgba(6, 51, 14, 0.7);
+    border-radius: 5px;
+    color: white;
+}
+#info > h2 {
+    text-align: center;
+    margin: auto;
+}
+#info > p {
+    font-size: 18px;
+    padding-left: 10px;
+    margin: auto;
+}
+
+#rama {
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    margin-top: -225px; /* Negative half of height. */
+    margin-left: -225px;
+    font-family: monospace;
+    background: rgb(58, 58, 58);
+    border-radius: 5px;
+    color: white;
+}
+
+#scores {
+    
+    position:fixed;
+    top: 18%;
+    left:39%;
+    right:60%;
+    width: 100%;
+    font-size:280%;
+    font-family: monospace;
+    color: rgb(32, 32, 32);
+}
+
+
+#topscores {
+    
+    position:fixed;
+    top: 18%;
+    right:-53%;
+    width: 100%;
+    font-size:280%;
+    font-family: monospace;
+    color: rgb(32, 32, 32);
+}
