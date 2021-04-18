@@ -1,4 +1,4 @@
-   html {
+html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
@@ -22,7 +22,7 @@ hr {
     width: 200px;
     height: 200px;
     font-family: monospace;
-    background: rgba(6, 51, 14, 0.7);
+    background: rgba(98, 118, 207, 0.418);
     border-radius: 5px;
     color: white;
 }
@@ -53,23 +53,26 @@ hr {
 #scores {
     
     position:fixed;
-    top: 18%;
+    top: 7%;
     left:39%;
     right:60%;
     width: 100%;
     font-size:280%;
     font-family: monospace;
-    color: rgb(32, 32, 32);
+    color: rgb(182, 182, 182);
 }
 
 
 #topscores {
     
     position:fixed;
-    top: 18%;
+    top: 7%;
     right:-53%;
     width: 100%;
     font-size:280%;
     font-family: monospace;
-    color: rgb(32, 32, 32);
+    color: rgb(182, 182, 182);
 }
+
+
+
