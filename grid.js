@@ -32,7 +32,7 @@ function init() {
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(76, window.innerWidth / window.innerHeight, 1, 10000);
     camera.position.z = 5;
-    camera.position.x = 2.5;
+    camera.position.x = 3;
     camera.position.y = 1.5;
 
     //Lighting
@@ -629,9 +629,6 @@ function mergeBlock(a, b) {
     //Add to scene
     scene.add(grid[a[0]][a[1]]);
 
-    //if (debug == true) {
-    //    scene.add(grid[b[0]][b[1]]);
-    //}
 }
 
 
@@ -639,7 +636,7 @@ function UpdateScore() {
 
     score = 400000;
 
-    //Add up current score
+    //Calculate current score
     grid.forEach(function (array) {
         array.forEach(function (box) {
             if (box.name != "empty") {
@@ -654,15 +651,7 @@ function UpdateScore() {
 
 
 function UpdateTopScore() {
-
-    //Set Top Score
-    //Moved into if statement of optimization
-    //topScore = score;
-
     document.getElementById("topscores").innerHTML = "Best:" + topScore + "km";
-
-
-
 }
 
 
