@@ -40,6 +40,23 @@ fieldset {
     resize: vertical;
 }
 
+h1 {
+    
+    
+    top: 1em;
+    font-weight: bold;
+    text-align:center;
+    color: rgb(197, 197, 197);
+    font-size: 100px;
+  }
+
+#button1{
+    position: absolute;
+    left: 60em;
+    top: 20em;
+  
+}
+
 #info {
     position: absolute;
     top: 0;
