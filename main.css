@@ -4,6 +4,7 @@ html {
     line-height: 1.4;
 }
 
+
 hr {
     display: block;
     height: 1px;
@@ -11,6 +12,49 @@ hr {
     border-top: 1px solid #ccc;
     margin: 1em 0;
     padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+/*
+* Remove default fieldset styles.
+*/
+
+fieldset {
+   border: 0;
+   margin: 0;
+   padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+ textarea {
+    resize: vertical;
+}
+
+h1 {
+    
+    
+    top: 1em;
+    font-weight: bold;
+    text-align:center;
+    color: rgb(197, 197, 197);
+    font-size: 100px;
+  }
+
+#button1{
+    position: absolute;
+    left: 60em;
+    top: 20em;
+  
 }
 
 #info {
@@ -22,7 +66,7 @@ hr {
     width: 200px;
     height: 200px;
     font-family: monospace;
-    background: rgba(98, 118, 207, 0.418);
+    background: rgba(182, 184, 192, 0.219);
     border-radius: 5px;
     color: white;
 }
@@ -53,8 +97,8 @@ hr {
 #scores {
     
     position:fixed;
-    top: 7%;
-    left:39%;
+    bottom: 81vh;
+    left:27vw;
     right:60%;
     width: 100%;
     font-size:280%;
@@ -66,8 +110,8 @@ hr {
 #topscores {
     
     position:fixed;
-    top: 7%;
-    right:-53%;
+    bottom: 74vh;
+    left:27vw;
     width: 100%;
     font-size:280%;
     font-family: monospace;
@@ -76,3 +120,77 @@ hr {
 
 
 
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href)")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title)")";
+    }
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100% !important;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
