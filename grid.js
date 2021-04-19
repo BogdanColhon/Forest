@@ -5,7 +5,7 @@ var wireGeometry, wireMaterial;
 var grid;
 var initiater = 0;
 var score = 400000;
-var topScore = 399997;
+var topScore = 399996;
 var FullBoxSize;
 let flash, star, starGeo, starCount = 15000;
 var mat;
@@ -27,7 +27,7 @@ function init() {
 
 
     FullBoxSize = new THREE.Vector3(1, 1, 0.01);
-    score = 399997;
+    score = 399996;
     //Scene setup
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(76, window.innerWidth / window.innerHeight, 1, 10000);
@@ -99,38 +99,38 @@ function init() {
         dynamicTexture[i].clear('white');
 
 
-        if ((Math.pow(3, i) > 0) && (Math.pow(3, i) < 10)) {
+        if ((Math.pow(4, i) > 0) && (Math.pow(4, i) < 10)) {
             //1 digit text
             dynamicTexture[i].context.font = "120px monospace";
-            dynamicTexture[i].drawText(Math.pow(3, i), 30, 100, 'black');
-        } else if ((Math.pow(3, i) > 10) && (Math.pow(3, i) < 100)) {
+            dynamicTexture[i].drawText(Math.pow(4, i), 30, 100, 'black');
+        } else if ((Math.pow(4, i) > 10) && (Math.pow(4, i) < 100)) {
             //2 digit text
             dynamicTexture[i].context.font = "100px monospace";
-            dynamicTexture[i].drawText(Math.pow(3, i), 8, 96, 'black');
-        } else if ((Math.pow(3, i) > 100) && (Math.pow(3, i) < 1000)) {
+            dynamicTexture[i].drawText(Math.pow(4, i), 8, 96, 'black');
+        } else if ((Math.pow(4, i) > 100) && (Math.pow(4, i) < 1000)) {
             //3 digit text
             dynamicTexture[i].context.font = "70px monospace";
-            dynamicTexture[i].drawText(Math.pow(3, i), 8, 86, 'black');
-        } else if (Math.pow(3, i) > 1000 && (Math.pow(3, i) < 10000)) {
+            dynamicTexture[i].drawText(Math.pow(4, i), 8, 86, 'black');
+        } else if (Math.pow(4, i) > 1000 && (Math.pow(4, i) < 10000)) {
             //4 digit text
             dynamicTexture[i].context.font = "55px monospace";
-            dynamicTexture[i].drawText(Math.pow(3, i), 8, 84, 'black');
-        } else if (Math.pow(3, i) > 10000 && (Math.pow(3, i) < 100000)) {
+            dynamicTexture[i].drawText(Math.pow(4, i), 8, 84, 'black');
+        } else if (Math.pow(4, i) > 10000 && (Math.pow(4, i) < 100000)) {
             //5 digit text
             dynamicTexture[i].context.font = "40px monospace";
-            dynamicTexture[i].drawText(Math.pow(3, i), 8, 82, 'black');
-        } else if (Math.pow(3, i) > 100000) {
+            dynamicTexture[i].drawText(Math.pow(4, i), 8, 82, 'black');
+        } else if (Math.pow(4, i) > 100000) {
             //6 digit text
             dynamicTexture[i].context.font = "35px monospace";
-            dynamicTexture[i].drawText(Math.pow(3, i), 8, 82, 'black');
+            dynamicTexture[i].drawText(Math.pow(4, i), 8, 82, 'black');
         }
         else {
 
             dynamicTexture[i].context.font = "30px monospace";
-            dynamicTexture[i].drawText(Math.pow(3, i), 8, 80, 'red');
+            dynamicTexture[i].drawText(Math.pow(4, i), 8, 80, 'red');
         }
 
-        console.log(Math.pow(3, i));
+        console.log(Math.pow(4, i));
         dynamicTexture[i].texture.needsUpdate = true;
     }
 
@@ -194,7 +194,7 @@ function init() {
     for (var i = 0; i < 13; i++) {
 
         Blocks[i] = new THREE.Mesh(geometry, mat[i]);
-        Blocks[i].name = Math.pow(3, i + 1) + "";
+        Blocks[i].name = Math.pow(4, i + 1) + "";
     }
 
 
@@ -568,50 +568,50 @@ function mergeBlock(a, b) {
     scene.remove(grid[a[0]][a[1]]);
     scene.remove(grid[b[0]][b[1]]);
 
-    if (grid[a[0]][a[1]].name == "3") {
+    if (grid[a[0]][a[1]].name == "4") {
 
         grid[a[0]][a[1]] = Blocks[1].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "9") {
+    } else if (grid[a[0]][a[1]].name == "16") {
 
         grid[a[0]][a[1]] = Blocks[2].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "27") {
+    } else if (grid[a[0]][a[1]].name == "64") {
 
         grid[a[0]][a[1]] = Blocks[3].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "81") {
+    } else if (grid[a[0]][a[1]].name == "256") {
 
         grid[a[0]][a[1]] = Blocks[4].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "243") {
+    } else if (grid[a[0]][a[1]].name == "1024") {
 
         grid[a[0]][a[1]] = Blocks[5].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "729") {
+    } else if (grid[a[0]][a[1]].name == "4096") {
 
         grid[a[0]][a[1]] = Blocks[6].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "2187") {
+    } else if (grid[a[0]][a[1]].name == "16384") {
 
         grid[a[0]][a[1]] = Blocks[7].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "6561") {
+    } else if (grid[a[0]][a[1]].name == "65536") {
 
         grid[a[0]][a[1]] = Blocks[8].clone();
 
-    } else if (grid[a[0]][a[1]].name == "19683") {
+    } else if (grid[a[0]][a[1]].name == "262144") {
 
         grid[a[0]][a[1]] = Blocks[9].clone();
 
-    } else if (grid[a[0]][a[1]].name == "59683") {
+    } else if (grid[a[0]][a[1]].name == "1048576") {
 
         grid[a[0]][a[1]] = Blocks[10].clone();
 

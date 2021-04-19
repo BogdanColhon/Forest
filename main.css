@@ -49,7 +49,7 @@ fieldset {
     width: 200px;
     height: 200px;
     font-family: monospace;
-    background: rgba(98, 118, 207, 0.418);
+    background: rgba(182, 184, 192, 0.219);
     border-radius: 5px;
     color: white;
 }
@@ -80,8 +80,8 @@ fieldset {
 #scores {
     
     position:fixed;
-    top: 7%;
-    left:39%;
+    bottom: 81vh;
+    left:27vw;
     right:60%;
     width: 100%;
     font-size:280%;
@@ -93,8 +93,8 @@ fieldset {
 #topscores {
     
     position:fixed;
-    top: 7%;
-    right:-53%;
+    bottom: 74vh;
+    left:27vw;
     width: 100%;
     font-size:280%;
     font-family: monospace;
