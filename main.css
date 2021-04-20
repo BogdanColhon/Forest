@@ -41,12 +41,9 @@ fieldset {
 }
 
 h1 {
-    
-    
-    top: 1em;
     font-weight: bold;
     text-align:center;
-    color: rgb(197, 197, 197);
+    color: rgb(196, 194, 194);
     font-size: 100px;
   }
 

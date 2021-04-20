@@ -10,6 +10,7 @@
  
      <link rel="stylesheet" href="normalize.css">
      <link rel="stylesheet" href="main.css">
+     <link rel="stylesheet" href="button.css">
  
  
      
@@ -18,7 +19,17 @@
  
  <body  background="frontMoon.jpg">
     <h1>To the Moon</h1>
-    <button id="button1" onclick="window.location.href='game.html'">Play</button>
+    <div class="container">
+        <div class="center">
+          <button class="btn" onclick="window.location.href='menu.html'">
+            <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+              <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+              <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+            </svg>
+            <span>Play</span>
+          </button>
+        </div>
+      </div>
      
  </body>
  
