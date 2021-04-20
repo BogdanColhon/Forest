@@ -114,6 +114,15 @@ h1 {
     font-family: monospace;
     color: rgb(182, 182, 182);
 }
+#end{
+    position:fixed;
+    bottom: 8vh;
+    left:27vw;
+    width: 100%;
+    font-size:400%;
+    font-family: monospace;
+    color: rgb(182, 182, 182);
+}
 
 
 
