@@ -12,7 +12,11 @@ var mat;
 var textureLoader,textureMoon,displacementMap;
 var textureURL = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/17271/lroc_color_poles_1k.jpg"; 
 var displacementURL = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/17271/ldem_3_8bit.jpg";
-
+var done1=1;
+var done2=1;
+var done3=1;
+var done4=1;
+var done=10;
 
 var Blocks;
 var empty;
@@ -25,7 +29,8 @@ animate();
 
 function init() {
 
-
+    document.onkeydown = inputKey;
+    document.getElementById("end").innerHTML = "";
     FullBoxSize = new THREE.Vector3(1, 1, 0.01);
     score = 399996;
     //Scene setup
@@ -318,47 +323,59 @@ function inputKey(event) {
 
     //keep track if any change has been done
     var change = 0;
+   
+    
     if (event.keyCode == '37') {
         //left arrow
         change += HorizontalMerge();
         change += MoveLeft();
-
+        done4=change;
         if (change > 0) {
-            AddRandom();
+           AddRandom();
         }
+        
 
     } else if (event.keyCode == '38') {
         //up arrow
         change += VerticalMerge();
-        change += MoveUp()
+        change += MoveUp();
+        done1=change;
         if (change > 0) {
             AddRandom();
         }
+        
     } else if (event.keyCode == '39') {
         //right arrow
         change += HorizontalMerge();
         change += MoveRight();
+       done2=change;
         if (change > 0) {
             AddRandom();
         }
+        
     } else if (event.keyCode == '40') {
         //down arrow
         change += VerticalMerge();
-        change += MoveDown()
+        change += MoveDown();
+       done3=change;
         if (change > 0) {
             AddRandom();
         }
+        
     } else if (event.keyCode == '13 ') {
         //Enter key
         init();
     }
-
+    done=done1+done2+done3+done4;
+    if(done==0)
+    {failedGame();}
     UpdateScore();
-
+   
     if (score <= topScore) {
         topScore = score;
         UpdateTopScore();
     }
+   
 
 }
 
@@ -399,9 +416,10 @@ function AddRandom() {
         grid[random[1]][random[0]].scale.x = 0.1;
         grid[random[1]][random[0]].scale.y = 0.1;
         scene.add(grid[random[1]][random[0]]);
+ 
         return 0;
     }
-
+ 
     return 1;
 
 }
@@ -569,50 +587,40 @@ function mergeBlock(a, b) {
     scene.remove(grid[b[0]][b[1]]);
 
     if (grid[a[0]][a[1]].name == "4") {
-
         grid[a[0]][a[1]] = Blocks[1].clone();
 
 
     } else if (grid[a[0]][a[1]].name == "16") {
-
         grid[a[0]][a[1]] = Blocks[2].clone();
 
 
     } else if (grid[a[0]][a[1]].name == "64") {
-
         grid[a[0]][a[1]] = Blocks[3].clone();
 
 
     } else if (grid[a[0]][a[1]].name == "256") {
-
         grid[a[0]][a[1]] = Blocks[4].clone();
 
 
     } else if (grid[a[0]][a[1]].name == "1024") {
-
         grid[a[0]][a[1]] = Blocks[5].clone();
 
 
     } else if (grid[a[0]][a[1]].name == "4096") {
-
         grid[a[0]][a[1]] = Blocks[6].clone();
 
 
     } else if (grid[a[0]][a[1]].name == "16384") {
-
         grid[a[0]][a[1]] = Blocks[7].clone();
 
 
     } else if (grid[a[0]][a[1]].name == "65536") {
-
         grid[a[0]][a[1]] = Blocks[8].clone();
 
     } else if (grid[a[0]][a[1]].name == "262144") {
-
         grid[a[0]][a[1]] = Blocks[9].clone();
 
     } else if (grid[a[0]][a[1]].name == "1048576") {
-
         grid[a[0]][a[1]] = Blocks[10].clone();
 
 
@@ -628,10 +636,30 @@ function mergeBlock(a, b) {
     grid[b[0]][b[1]].position.add(positionB);
     //Add to scene
     scene.add(grid[a[0]][a[1]]);
+    
+
 
 }
 
+function blockcommands(event) {
+  
+    event = event || window.event;
+    
+    if (event.keyCode == '37') {}
+    else if (event.keyCode == '38') {}
+    else if (event.keyCode == '39') {}
+    else if (event.keyCode == '40') {}
+    else if (event.keyCode == '13 ') {
+            //Enter key
+            init();
+        }
+   
+    }
 
+function failedGame(){
+    document.onkeydown = blockcommands;
+    document.getElementById("end").innerHTML = "You space journey ends here..for now";
+    }
 function UpdateScore() {
 
     score = 400000;
@@ -644,6 +672,14 @@ function UpdateScore() {
             }
         });
     });
+    if(score<=0)
+    {
+        document.onkeydown = blockcommands;
+        score=0;
+        document.getElementById("end").innerHTML = "Journey completed!";
+        
+    }
+   
     document.getElementById("scores").innerHTML = score + "km left";
 
 
@@ -663,6 +699,9 @@ function Swap(a, b) {
     grid[b[0]][b[1]] = tmp;
 
 }
+
+
+
 
 
 
