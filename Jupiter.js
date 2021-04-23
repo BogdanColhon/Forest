@@ -151,51 +151,51 @@ function init() {
     mat = new Array(14);
 
     mat[0] = new THREE.MeshBasicMaterial({
-        color: 0xCCEEFF,
+        color: 0xe6e6e6,
         map: dynamicTexture[1].texture
     });
     mat[1] = new THREE.MeshBasicMaterial({
-        color: 0x99DDFF,
+        color: 0x808080,
         map: dynamicTexture[2].texture
     });
     mat[2] = new THREE.MeshBasicMaterial({
-        color: 0x4DC3FF,
+        color: 0x595959,
         map: dynamicTexture[3].texture
     });
     mat[3] = new THREE.MeshBasicMaterial({
-        color: 0x00CCFF,
+        color: 0xb3b3ff,
         map: dynamicTexture[4].texture
     });
     mat[4] = new THREE.MeshBasicMaterial({
-        color: 0x0099FF,
+        color: 0x8080ff,
         map: dynamicTexture[5].texture
     });
     mat[5] = new THREE.MeshBasicMaterial({
-        color: 0x6666FF,
+        color: 0x99b3ff,
         map: dynamicTexture[6].texture
     });
     mat[6] = new THREE.MeshBasicMaterial({
-        color: 0xCC33FF,
+        color: 0x3366ff,
         map: dynamicTexture[7].texture
     });
     mat[7] = new THREE.MeshBasicMaterial({
-        color: 0xCC0099,
+        color: 0xff66ff,
         map: dynamicTexture[8].texture
     });
     mat[8] = new THREE.MeshBasicMaterial({
-        color: 0xFFFF66,
+        color: 0xff8080,
         map: dynamicTexture[9].texture
     });
     mat[9] = new THREE.MeshBasicMaterial({
-        color: 0xFF9966,
+        color: 0x33cccc,
         map: dynamicTexture[10].texture
     });
     mat[10] = new THREE.MeshBasicMaterial({
-        color: 0x990000,
+        color: 0xffa64d,
         map: dynamicTexture[11].texture
     });
     mat[11] = new THREE.MeshBasicMaterial({
-        color: 0x800000,
+        color: 0xffe53d,
         map: dynamicTexture[12].texture
     });
     mat[12] = new THREE.MeshBasicMaterial({
