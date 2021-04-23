@@ -17,6 +17,7 @@ var done2=1;
 var done3=1;
 var done4=1;
 var done=10;
+var emptyNum=0;
 
 var Blocks;
 var empty;
@@ -28,7 +29,11 @@ init();
 animate();
 
 function init() {
-
+    done1=1;
+    done2=1;
+    done3=1;
+    done4=1;
+    emptyNum=0;
     document.onkeydown = inputKey;
     document.getElementById("end").innerHTML = "";
     FullBoxSize = new THREE.Vector3(1, 1, 0.01);
@@ -368,7 +373,22 @@ function inputKey(event) {
     }
     done=done1+done2+done3+done4;
     if(done==0)
-    {failedGame();}
+    {
+        
+    for (var j = 0; j < 5; j++) {
+        for (var i = 0; i < 5; i++) {
+
+            if (grid[j][i].name == "empty") 
+            {
+                emptyNum++;
+            }
+        }
+    }
+        if(emptyNum==0)
+        {
+        failedGame();
+        }
+    }
     UpdateScore();
    
     if (score <= topScore) {
