@@ -17,6 +17,7 @@ var done2=1;
 var done3=1;
 var done4=1;
 var done=10;
+var emptyNum=0;
 
 var Blocks;
 var empty;
@@ -28,7 +29,11 @@ init();
 animate();
 
 function init() {
-
+    done1=1;
+    done2=1;
+    done3=1;
+    done4=1;
+    emptyNum=0;
     document.onkeydown = inputKey;
     document.getElementById("end").innerHTML = "";
     FullBoxSize = new THREE.Vector3(1, 1, 0.01);
@@ -104,46 +109,46 @@ function init() {
         dynamicTexture[i].clear('white');
 
 
-        if ((Math.pow(4, i) > 0) && (Math.pow(4, i) < 10)) {
+        if ((Math.pow(5, i) > 0) && (Math.pow(5, i) < 10)) {
             //1 digit text
             dynamicTexture[i].context.font = "120px monospace";
-            dynamicTexture[i].drawText(Math.pow(4, i), 30, 100, 'black');
-        } else if ((Math.pow(4, i) > 10) && (Math.pow(4, i) < 100)) {
+            dynamicTexture[i].drawText(Math.pow(5, i), 30, 100, 'black');
+        } else if ((Math.pow(5, i) > 10) && (Math.pow(5, i) < 100)) {
             //2 digit text
             dynamicTexture[i].context.font = "100px monospace";
-            dynamicTexture[i].drawText(Math.pow(4, i), 8, 96, 'black');
-        } else if ((Math.pow(4, i) > 100) && (Math.pow(4, i) < 1000)) {
+            dynamicTexture[i].drawText(Math.pow(5, i), 8, 96, 'black');
+        } else if ((Math.pow(5, i) > 100) && (Math.pow(5, i) < 1000)) {
             //3 digit text
             dynamicTexture[i].context.font = "70px monospace";
-            dynamicTexture[i].drawText(Math.pow(4, i), 6, 86, 'black');
-        } else if (Math.pow(4, i) > 1000 && (Math.pow(4, i) < 10000)) {
+            dynamicTexture[i].drawText(Math.pow(5, i), 6, 86, 'black');
+        } else if (Math.pow(5, i) > 1000 && (Math.pow(5, i) < 10000)) {
             //4 digit text
             dynamicTexture[i].context.font = "50px monospace";
-            dynamicTexture[i].drawText(Math.pow(4, i), 6, 84, 'black');
-        } else if (Math.pow(4, i) > 10000 && (Math.pow(4, i) < 100000)) {
+            dynamicTexture[i].drawText(Math.pow(5, i), 6, 84, 'black');
+        } else if (Math.pow(5, i) > 10000 && (Math.pow(5, i) < 100000)) {
             //5 digit text
             dynamicTexture[i].context.font = "40px monospace";
-            dynamicTexture[i].drawText(Math.pow(4, i), 6, 82, 'black');
-        } else if (Math.pow(4, i) > 100000 && (Math.pow(4, i) < 1000000)) {
+            dynamicTexture[i].drawText(Math.pow(5, i), 6, 82, 'black');
+        } else if (Math.pow(5, i) > 100000 && (Math.pow(5, i) < 1000000)) {
             //6 digit text
             dynamicTexture[i].context.font = "35px monospace";
-            dynamicTexture[i].drawText(Math.pow(4, i), 6, 80, 'black');
-        }else if (Math.pow(4, i) > 1000000 && (Math.pow(4, i) < 10000000)) {
+            dynamicTexture[i].drawText(Math.pow(5, i), 6, 80, 'black');
+        }else if (Math.pow(5, i) > 1000000 && (Math.pow(5, i) < 10000000)) {
         //7 digit text
         dynamicTexture[i].context.font = "30px monospace";
-        dynamicTexture[i].drawText(Math.pow(4, i), 6, 76, 'black');
-        }else if (Math.pow(4, i) > 10000000) {
+        dynamicTexture[i].drawText(Math.pow(5, i), 6, 76, 'black');
+        }else if (Math.pow(5, i) > 10000000) {
         //8 digit text
             dynamicTexture[i].context.font = "27px monospace";
-            dynamicTexture[i].drawText(Math.pow(4, i), 6, 76, 'black');
+            dynamicTexture[i].drawText(Math.pow(5, i), 6, 76, 'black');
             }
         else {
 
             dynamicTexture[i].context.font = "30px monospace";
-            dynamicTexture[i].drawText(Math.pow(4, i), 8, 80, 'red');
+            dynamicTexture[i].drawText(Math.pow(5, i), 8, 80, 'red');
         }
 
-        console.log(Math.pow(4, i));
+        console.log(Math.pow(5, i));
         dynamicTexture[i].texture.needsUpdate = true;
     }
 
@@ -211,7 +216,7 @@ function init() {
     for (var i = 0; i < 14; i++) {
 
         Blocks[i] = new THREE.Mesh(geometry, mat[i]);
-        Blocks[i].name = Math.pow(4,i+1) + "";
+        Blocks[i].name = Math.pow(5,i+1) + "";
     }
 
 
@@ -380,7 +385,23 @@ function inputKey(event) {
     }
     done=done1+done2+done3+done4;
     if(done==0)
-    {failedGame();}
+    {
+        
+    for (var j = 0; j < 5; j++) {
+        for (var i = 0; i < 5; i++) {
+
+            if (grid[j][i].name == "empty") 
+            {
+                emptyNum++;
+            }
+        }
+    }
+        if(emptyNum==0)
+        {
+        failedGame();
+        }
+    }
+
     UpdateScore();
    
     if (score <= topScore) {
@@ -598,53 +619,53 @@ function mergeBlock(a, b) {
     scene.remove(grid[a[0]][a[1]]);
     scene.remove(grid[b[0]][b[1]]);
 
-    if (grid[a[0]][a[1]].name == "4") {
+    if (grid[a[0]][a[1]].name == "5") {
         grid[a[0]][a[1]] = Blocks[1].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "16") {
+    } else if (grid[a[0]][a[1]].name == "25") {
         grid[a[0]][a[1]] = Blocks[2].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "64") {
+    } else if (grid[a[0]][a[1]].name == "125") {
         grid[a[0]][a[1]] = Blocks[3].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "256") {
+    } else if (grid[a[0]][a[1]].name == "625") {
         grid[a[0]][a[1]] = Blocks[4].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "1024") {
+    } else if (grid[a[0]][a[1]].name == "3125") {
         grid[a[0]][a[1]] = Blocks[5].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "4096") {
+    } else if (grid[a[0]][a[1]].name == "15625") {
         grid[a[0]][a[1]] = Blocks[6].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "16384") {
+    } else if (grid[a[0]][a[1]].name == "78125") {
         grid[a[0]][a[1]] = Blocks[7].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "65536") {
+    } else if (grid[a[0]][a[1]].name == "390625") {
         grid[a[0]][a[1]] = Blocks[8].clone();
 
-    } else if (grid[a[0]][a[1]].name == "262144") {
+    } else if (grid[a[0]][a[1]].name == "1953125") {
         grid[a[0]][a[1]] = Blocks[9].clone();
 
-    } else if (grid[a[0]][a[1]].name == "1048576") {
+    } else if (grid[a[0]][a[1]].name == "9765625") {
         grid[a[0]][a[1]] = Blocks[10].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "4194304") {
+    } else if (grid[a[0]][a[1]].name == "48828125") {
         grid[a[0]][a[1]] = Blocks[11].clone();
 
 
-    } else if (grid[a[0]][a[1]].name == "16777216") {
+    } else if (grid[a[0]][a[1]].name == "244140625") {
         grid[a[0]][a[1]] = Blocks[12].clone();
 
 
-    }else if (grid[a[0]][a[1]].name == "67108864") {
+    }else if (grid[a[0]][a[1]].name == "1220703125") {
         grid[a[0]][a[1]] = Blocks[13].clone();
 
 
