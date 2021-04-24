@@ -207,7 +207,7 @@ function init() {
     for (var i = 0; i < 13; i++) {
 
         Blocks[i] = new THREE.Mesh(geometry, mat[i]);
-        Blocks[i].name = Math.pow(4, 7 + 1) + "";
+        Blocks[i].name = Math.pow(4, i + 1) + "";
     }
 
 
