@@ -124,11 +124,11 @@ function init() {
         } else if (Math.pow(5, i) > 1000 && (Math.pow(5, i) < 10000)) {
             //4 digit text
             dynamicTexture[i].context.font = "50px monospace";
-            dynamicTexture[i].drawText(Math.pow(5, i), 6, 84, 'black');
+            dynamicTexture[i].drawText(Math.pow(5, i), 8, 84, 'black');
         } else if (Math.pow(5, i) > 10000 && (Math.pow(5, i) < 100000)) {
             //5 digit text
             dynamicTexture[i].context.font = "40px monospace";
-            dynamicTexture[i].drawText(Math.pow(5, i), 6, 82, 'black');
+            dynamicTexture[i].drawText(Math.pow(5, i), 8, 82, 'black');
         } else if (Math.pow(5, i) > 100000 && (Math.pow(5, i) < 1000000)) {
             //6 digit text
             dynamicTexture[i].context.font = "35px monospace";
@@ -137,16 +137,21 @@ function init() {
         //7 digit text
         dynamicTexture[i].context.font = "30px monospace";
         dynamicTexture[i].drawText(Math.pow(5, i), 6, 76, 'black');
-        }else if (Math.pow(5, i) > 10000000) {
+        }else if (Math.pow(5, i) > 10000000 && (Math.pow(5, i) < 100000000)){
         //8 digit text
             dynamicTexture[i].context.font = "27px monospace";
             dynamicTexture[i].drawText(Math.pow(5, i), 6, 76, 'black');
-            }
+        }else if (Math.pow(5, i) > 100000000) {
+        //9 digit text
+                dynamicTexture[i].context.font = "24px monospace";
+                dynamicTexture[i].drawText(Math.pow(5, i), 6, 76, 'black');
+                }
         else {
 
             dynamicTexture[i].context.font = "30px monospace";
             dynamicTexture[i].drawText(Math.pow(5, i), 8, 80, 'red');
         }
+
 
         console.log(Math.pow(5, i));
         dynamicTexture[i].texture.needsUpdate = true;
@@ -157,56 +162,52 @@ function init() {
     mat = new Array(14);
 
     mat[0] = new THREE.MeshBasicMaterial({
-        color: 0xCCEEFF,
+        color: 0xe6e6e6,
         map: dynamicTexture[1].texture
     });
     mat[1] = new THREE.MeshBasicMaterial({
-        color: 0x99DDFF,
+        color: 0x808080,
         map: dynamicTexture[2].texture
     });
     mat[2] = new THREE.MeshBasicMaterial({
-        color: 0x4DC3FF,
+        color: 0x595959,
         map: dynamicTexture[3].texture
     });
     mat[3] = new THREE.MeshBasicMaterial({
-        color: 0x00CCFF,
+        color: 0xb3b3ff,
         map: dynamicTexture[4].texture
     });
     mat[4] = new THREE.MeshBasicMaterial({
-        color: 0x0099FF,
+        color: 0x8080ff,
         map: dynamicTexture[5].texture
     });
     mat[5] = new THREE.MeshBasicMaterial({
-        color: 0x6666FF,
+        color: 0x4d4dff,
         map: dynamicTexture[6].texture
     });
     mat[6] = new THREE.MeshBasicMaterial({
-        color: 0xCC33FF,
+        color: 0xffb3ff,
         map: dynamicTexture[7].texture
     });
     mat[7] = new THREE.MeshBasicMaterial({
-        color: 0xCC0099,
+        color: 0xe600e6,
         map: dynamicTexture[8].texture
     });
     mat[8] = new THREE.MeshBasicMaterial({
-        color: 0xFFFF66,
+        color: 0xcc0099,
         map: dynamicTexture[9].texture
     });
     mat[9] = new THREE.MeshBasicMaterial({
-        color: 0xFF9966,
+        color: 0x66ffff,
         map: dynamicTexture[10].texture
     });
     mat[10] = new THREE.MeshBasicMaterial({
-        color: 0x990000,
+        color: 0x00b3b3,
         map: dynamicTexture[11].texture
     });
     mat[11] = new THREE.MeshBasicMaterial({
-        color: 0x800000,
+        color: 0xffff1a,
         map: dynamicTexture[12].texture
-    });
-    mat[12] = new THREE.MeshBasicMaterial({
-        color: 0x806600,
-        map: dynamicTexture[13].texture
     });
 
 
@@ -713,7 +714,7 @@ function blockcommands(event) {
 
 function failedGame(){
     document.onkeydown = blockcommands;
-    document.getElementById("end2").innerHTML = "You space journey ends here..for now";
+    document.getElementById("end2").innerHTML = "Mission failed, you'll get it next time";
     }
 function UpdateScore() {
 
@@ -731,7 +732,7 @@ function UpdateScore() {
     {
         document.onkeydown = blockcommands;
         score=0;
-        document.getElementById("end2").innerHTML = "Journey completed!";
+        document.getElementById("end2").innerHTML = "Mission accomplished!";
         
     }
    

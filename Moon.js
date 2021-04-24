@@ -120,20 +120,32 @@ function init() {
         } else if ((Math.pow(4, i) > 100) && (Math.pow(4, i) < 1000)) {
             //3 digit text
             dynamicTexture[i].context.font = "70px monospace";
-            dynamicTexture[i].drawText(Math.pow(4, i), 8, 86, 'black');
+            dynamicTexture[i].drawText(Math.pow(4, i), 6, 86, 'black');
         } else if (Math.pow(4, i) > 1000 && (Math.pow(4, i) < 10000)) {
             //4 digit text
-            dynamicTexture[i].context.font = "55px monospace";
+            dynamicTexture[i].context.font = "50px monospace";
             dynamicTexture[i].drawText(Math.pow(4, i), 8, 84, 'black');
         } else if (Math.pow(4, i) > 10000 && (Math.pow(4, i) < 100000)) {
             //5 digit text
             dynamicTexture[i].context.font = "40px monospace";
             dynamicTexture[i].drawText(Math.pow(4, i), 8, 82, 'black');
-        } else if (Math.pow(4, i) > 100000) {
+        } else if (Math.pow(4, i) > 100000 && (Math.pow(4, i) < 1000000)) {
             //6 digit text
             dynamicTexture[i].context.font = "35px monospace";
-            dynamicTexture[i].drawText(Math.pow(4, i), 8, 82, 'black');
-        }
+            dynamicTexture[i].drawText(Math.pow(4, i), 6, 80, 'black');
+        }else if (Math.pow(4, i) > 1000000 && (Math.pow(4, i) < 10000000)) {
+        //7 digit text
+        dynamicTexture[i].context.font = "30px monospace";
+        dynamicTexture[i].drawText(Math.pow(4, i), 6, 76, 'black');
+        }else if (Math.pow(4, i) > 10000000 && (Math.pow(4, i) < 100000000)){
+        //8 digit text
+            dynamicTexture[i].context.font = "27px monospace";
+            dynamicTexture[i].drawText(Math.pow(4, i), 6, 76, 'black');
+        }else if (Math.pow(4, i) > 100000000) {
+        //9 digit text
+                dynamicTexture[i].context.font = "24px monospace";
+                dynamicTexture[i].drawText(Math.pow(4, i), 6, 76, 'black');
+                }
         else {
 
             dynamicTexture[i].context.font = "30px monospace";
@@ -161,7 +173,7 @@ function init() {
         map: dynamicTexture[3].texture
     });
     mat[3] = new THREE.MeshBasicMaterial({
-        color: 0xb3b3ff,
+        color:  0xb3b3ff,
         map: dynamicTexture[4].texture
     });
     mat[4] = new THREE.MeshBasicMaterial({
@@ -169,34 +181,25 @@ function init() {
         map: dynamicTexture[5].texture
     });
     mat[5] = new THREE.MeshBasicMaterial({
-        color: 0x99b3ff,
+        color: 0x4d4dff,
         map: dynamicTexture[6].texture
     });
     mat[6] = new THREE.MeshBasicMaterial({
-        color: 0x3366ff,
+        color: 0xffb3ff,
         map: dynamicTexture[7].texture
     });
     mat[7] = new THREE.MeshBasicMaterial({
-        color: 0xff66ff,
+        color: 0xcc0099,
         map: dynamicTexture[8].texture
     });
     mat[8] = new THREE.MeshBasicMaterial({
-        color: 0xff8080,
+        color:  0xffff1a,
         map: dynamicTexture[9].texture
     });
     mat[9] = new THREE.MeshBasicMaterial({
-        color: 0x33cccc,
+        color: 0x66ffff,
         map: dynamicTexture[10].texture
     });
-    mat[10] = new THREE.MeshBasicMaterial({
-        color: 0xffa64d,
-        map: dynamicTexture[11].texture
-    });
-    mat[11] = new THREE.MeshBasicMaterial({
-        color: 0xffe53d,
-        map: dynamicTexture[12].texture
-    });
-
 
 
     Blocks = new Array(12);
@@ -204,7 +207,7 @@ function init() {
     for (var i = 0; i < 13; i++) {
 
         Blocks[i] = new THREE.Mesh(geometry, mat[i]);
-        Blocks[i].name = Math.pow(4, i + 1) + "";
+        Blocks[i].name = Math.pow(4, 7 + 1) + "";
     }
 
 
