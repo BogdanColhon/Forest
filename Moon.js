@@ -89,7 +89,7 @@ function init() {
                displacementMap: displacementMap,
             displacementScale: 0.06,
             bumpMap: displacementMap,
-            bumpScale: 0.10,
+            bumpScale: 0.05,
              reflectivity:0, 
              shininess :0
         } 
@@ -296,7 +296,7 @@ function animate() {
     });
     starGeo.verticesNeedUpdate = true;
     star.rotation.y += 0.0001;
-    moon.rotation.y += 0.00004;
+    moon.rotation.y += 0.0003;
    // moon.rotation.x += 0.0001;
 
     requestAnimationFrame(animate);
@@ -370,13 +370,18 @@ function inputKey(event) {
     } else if (event.keyCode == '13 ') {
         //Enter key
         init();
+    }else if(event.keyCode=='77')
+    {
+        window.location = "menu.html";
+
     }
+
     done=done1+done2+done3+done4;
     if(done==0)
     {
         
-    for (var j = 0; j < 5; j++) {
-        for (var i = 0; i < 5; i++) {
+    for (var j = 0; j < 4; j++) {
+        for (var i = 0; i < 4; i++) {
 
             if (grid[j][i].name == "empty") 
             {
@@ -672,6 +677,11 @@ function blockcommands(event) {
     else if (event.keyCode == '13 ') {
             //Enter key
             init();
+        }
+    else if(event.keyCode=='77')
+        {
+            window.location = "menu.html";
+    
         }
    
     }

@@ -34,7 +34,7 @@ function init() {
     done4=1;
     emptyNum=0;
     document.onkeydown = inputKey;
-    document.getElementById("end").innerHTML = "";
+    document.getElementById("end2").innerHTML = "";
     FullBoxSize = new THREE.Vector3(1, 1, 0.01);
     score = 587999996;
     //Scene setup
@@ -210,7 +210,7 @@ function init() {
     for (var i = 0; i < 14; i++) {
 
         Blocks[i] = new THREE.Mesh(geometry, mat[i]);
-        Blocks[i].name = Math.pow(5,i+1) + "";
+        Blocks[i].name = Math.pow(5,11+1) + "";
     }
 
 
@@ -242,7 +242,7 @@ function init() {
     var BackGeometry = new THREE.BoxGeometry(0.89, 0.89, 0.01);
     var BackColor = new THREE.Color(0xffffff);
     var BackJom = new THREE.BoxGeometry(5.2, 5.2, 0.01);
-    var BackCol = new THREE.Color(0x8D8D8D);
+    var BackCol = new THREE.Color(0x2d323b);
     var BackMat = new THREE.MeshBasicMaterial({
         color: BackCol
     });
@@ -376,7 +376,12 @@ function inputKey(event) {
     } else if (event.keyCode == '13 ') {
         //Enter key
         init();
+    }else if(event.keyCode=='77')
+    {
+        window.location = "menu.html";
+
     }
+
     done=done1+done2+done3+done4;
     if(done==0)
     {
@@ -692,12 +697,17 @@ function blockcommands(event) {
             //Enter key
             init();
         }
+    else if(event.keyCode=='77')
+        {
+            window.location = "menu.html";
+    
+        }
    
     }
 
 function failedGame(){
     document.onkeydown = blockcommands;
-    document.getElementById("end").innerHTML = "You space journey ends here..for now";
+    document.getElementById("end2").innerHTML = "Well..this is sad";
     }
 function UpdateScore() {
 
@@ -715,7 +725,7 @@ function UpdateScore() {
     {
         document.onkeydown = blockcommands;
         score=0;
-        document.getElementById("end").innerHTML = "Journey completed!";
+        document.getElementById("end2").innerHTML = "Nice";
         
     }
    
