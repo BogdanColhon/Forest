@@ -5,7 +5,7 @@ var wireGeometry, wireMaterial;
 var grid;
 var initiater = 0;
 var score = 45000000;
-var topScore = 44999996;
+var topScore = 44999995;
 var FullBoxSize;
 let flash, star, starGeo, starCount = 15000;
 var mat;
